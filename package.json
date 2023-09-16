@@ -48,9 +48,3 @@
   },
   "proxy": "http://localhost:4000"
 }
-
-git pull origin ,,,
-git init
-git add .
-git commit -m "feat roqkf"
-git push originf mai
