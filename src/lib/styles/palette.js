@@ -24,6 +24,11 @@ const palette = {
     '#0c8599',
     '#0b7285',
   ],
+  pink: [
+    '#ff99a0',
+    '#eb8d9a',
+    '#b26b6f',
+  ]
 };
 
 export default palette;

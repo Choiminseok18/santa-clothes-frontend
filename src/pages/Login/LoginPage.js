@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import styled from 'styled-components';
 import $ from 'jquery';
 
@@ -116,46 +115,58 @@ function LoginPage() {
 
   return (
     <StyledLogin>
+      <div>
       <h1>Santa-clothes</h1>
-      <button onClick={requestPay}>결제하기</button>
-      <div className="wrap">
-        <div className="title">로그인 및 로그아웃</div>
-        <a
-          className="kakao"
-          href="https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=5f07dddd337b545cf50cc06f84a02a98&redirect_uri=http://192.168.10.104:8080/api/oauth/kakao"
-        >
-          <div className="icon kakao_i"></div>
-          <div className="text kakao_txt">카카오톡으로 간편 로그인</div>
+      <div class="wrap">
+        <div class="title">로그인 및 로그아웃</div>
+        <a class="kakao"
+           href="https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=cbf0432b0c063d0d602795e63e5881f2&redirect_uri=http://192.168.10.178:8080">
+
+          <div class="kakao_i"></div>
+          <div class="kakao_txt">카카오톡으로 간편 로그인</div>
         </a>
-        <a
-          className="kakao"
-          href="https://kauth.kakao.com/oauth/logout?client_id=cbf0432b0c063d0d602795e63e5881f2&logout_redirect_uri=http://localhost:8080"
-        >
-          <div className="icon kakao_i"></div>
-          <div className="text kakao_txt">카카오톡 계정 로그아웃</div>
+        <a class="kakao"
+           href="https://kauth.kakao.com/oauth/logout?client_id=cbf0432b0c063d0d602795e63e5881f2&logout_redirect_uri=http://192.168.10.178:8080">
+
+          <div class="kakao_i"></div>
+          <div class="kakao_txt">카카오톡 계정 로그아웃</div>
         </a>
-        <a
-          className="naver"
-          href="https://nid.naver.com/oauth2.0/authorize?response_type=code&client_id=s3AIRornSqDfYiAheFa_&state=0&redirect_uri=http://localhost:8080/api/oauth/naver"
-        >
-          <div className="icon naver_i"></div>
-          <div className="text naver_txt">네이버 간편 로그인</div>
+        <a class="naver"
+           href="https://nid.naver.com/oauth2.0/authorize?response_type=code&client_id=s3AIRornSqDfYiAheFa_&state=0&redirect_uri=http://192.168.10.178:8080/api/oauth/naver">
+
+          <div class="naver_i"></div>
+          <div class="naver_txt">네이버 간편 로그인</div>
         </a>
-        <a className="naver" href="https://nid.naver.com/nidlogin.logout">
-          <div className="icon naver_i"></div>
-          <div className="text naver_txt">네이버 간편 로그아웃</div>
+        <a class="naver" href="https://nid.naver.com/nidlogin.logout">
+
+          <div class="naver_i"></div>
+          <div class="naver_txt">네이버 간편 로그아웃</div>
         </a>
-        <a
-          className="google"
-          href="https://accounts.google.com/o/oauth2/v2/auth?scope=https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email&client_id=475110324213-ero24hdidbihqk4lj79igibkh51ihldu.apps.googleusercontent.com&response_type=code&redirect_uri=http://localhost:8080/api/oauth/google&access_type=offline"
-        >
-          <div className="icon google_i"></div>
-          <div className="text google_txt">구글 간편 로그인</div>
+        <a class="google"
+           href="https://accounts.google.com/o/oauth2/v2/auth?scope=https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email&client_id=475110324213-ero24hdidbihqk4lj79igibkh51ihldu.apps.googleusercontent.com&response_type=code&redirect_uri=http://localhost:8080/api/oauth/google&access_type=offline">
+
+          <div class="google_i"></div>
+          <div class="google_txt">구글 간편 로그인</div>
         </a>
-        <a className="google" href="https://mail.google.com/mail/u/0/?logout&hl=en">
-          <div className="icon google_i"></div>
-          <div className="text google_txt">구글 간편 로그아웃</div>
+        <a class="google" href="https://mail.google.com/mail/u/0/?logout&hl=en">
+
+          <div class="google_i"></div>
+          <div class="google_txt">구글 간편 로그아웃</div>
         </a>
+
+        <button></button>
+      </div>
+
+      <script>
+        {
+        function runIndexHtml() {
+        // 새 창에서 index.html 파일 실행
+        window.open("src/main/resources/templates/index.html", "_blank");
+      }
+        }
+      </script>
+
+      <button onclick="runIndexHtml()">Run index.html</button>
       </div>
     </StyledLogin>
   );

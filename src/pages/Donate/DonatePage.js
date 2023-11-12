@@ -1,11 +1,11 @@
+import DonateTemplate from "../../components/Donate/DonateTemplate";
+import DonatePostListContainer from "../../containers/Donate/DonatePost/DonatePostListContainer";
+
 const donatePage = () => {
   return (
     <div>
-      <div>
-        <h1>나눠줄래요</h1>
-        <hr/>
-        <p>나눔 게시판 페이지</p>
-      </div>
+      <DonateTemplate />
+      <DonatePostListContainer />
     </div>
   );
 };

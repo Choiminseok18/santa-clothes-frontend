@@ -1,11 +1,11 @@
-const santaShopPage = () => {
+import SantaShopTemplate from "../../components/SantaShop/SantaShopTemplate";
+
+const SantaShopPage = () => {
   return (
-    <div>
-      <h1>산타 샵</h1>
-      <hr/>
-      <p>산타 샵 페이지</p>
-    </div>
+    <>
+      <SantaShopTemplate/>
+    </>
   );
 };
 
-export default santaShopPage;
+export default SantaShopPage;

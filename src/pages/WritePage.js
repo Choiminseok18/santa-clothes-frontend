@@ -1,14 +1,14 @@
-import EditorContainer from '../containers/write/EditorContainer';
-import Responsive from '../component/common/Responsive';
-import TagBoxContainer from "../containers/write/TagBoxContainer";
-import WriteActionButtonContainer from "../containers/write/WriteActionButtonContainer";
+import DonateEditorContainer from '../containers/Donate/DonateEditorContainer';
+import Responsive from '../components/common/Responsive';
+import DonateTagBoxContainer from "../containers/Donate/DonateTagBoxContainer";
+import DonateWriteActionButtonContainer from "../containers/Donate/DonateWriteActionButtonContainer";
 
 const WritePage = () => {
   return (
     <Responsive>
-      <EditorContainer />
-      <TagBoxContainer />
-      <WriteActionButtonContainer />
+      <DonateEditorContainer />
+      <DonateTagBoxContainer />
+      <DonateWriteActionButtonContainer />
     </Responsive>
   );
 };

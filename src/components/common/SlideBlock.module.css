@@ -1,0 +1,49 @@
+.banner {
+    width: 80vw;
+    --swiper-theme-color: #fff;
+    text-align: center;
+}
+
+.slide1 {
+    color: #e9ecef;
+    padding-top: 30vh;
+    padding-bottom: 25vh;
+}
+
+.slide2 {
+    padding-top: 30vh;
+    color: #e9ecef;
+}
+
+.slide3 {
+    padding-top: 30vh;
+    color: #e9ecef;
+}
+
+.head {
+
+    font-size: 3rem;
+}
+
+.description {
+    font-size: 1.8rem;
+}
+
+.Button {
+    margin-top: 4vh;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 0.25rem 0.6rem;
+    color: #343a40;
+    outline: none;
+    cursor: pointer;
+    opacity: 20%;
+
+    background: #e9ecef;
+    &:hover {
+        background: #f1f3f5;
+        color: #ced4da;
+    }
+}

@@ -1,4 +1,4 @@
-import MainTemplate from "../../component/main/MainTemplate";
+import MainTemplate from "../../components/main/MainTemplate";
 
 const MainPage = () => {
   return (
