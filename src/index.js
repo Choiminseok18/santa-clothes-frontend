@@ -7,8 +7,9 @@ import { createStore, applyMiddleware } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import createSagaMiddleware from 'redux-saga';
 import rootReducer, { rootSaga } from './modules';
+import {QueryClient, QueryClientProvider} from "@tanstack/react-query";
 
-
+const queryClient = new QueryClient();
 const sagaMiddleware = createSagaMiddleware();
 const store = createStore(
   rootReducer,
@@ -19,10 +20,14 @@ const store = createStore(
 sagaMiddleware.run(rootSaga);
 
 ReactDOM.render(
+
   <Provider store={store}>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
+    <QueryClientProvider client={queryClient}>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </QueryClientProvider>
   </Provider>,
+
   document.getElementById('root'),
 );

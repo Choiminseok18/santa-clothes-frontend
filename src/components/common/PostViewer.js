@@ -3,8 +3,8 @@ import palette from '../../lib/styles/palette';
 import Responsive from '../common/Responsive';
 
 const PostViewerBlock = styled(Responsive)`
-  margin-top: 4rem;
-  margin-bottom: 25rem;
+  margin-top: 8rem;
+  margin-bottom: 15rem;
 `;
 const PostHead = styled.div`
   border-bottom: 1px solid ${palette.gray[2]};
@@ -46,7 +46,29 @@ const PostContent = styled.div`
   color: ${palette.gray[8]};
 `;
 
-const PostViewer = ({ post, error, loading }) => {
+const DonateButton = styled.button`
+  color: ${palette.gray[7]};
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 1rem 1rem;
+  border: none;
+  border-radius: 6px;
+  width: 7rem;
+  height: 4rem;
+  background-color: ${palette.pink[3]};
+  margin: 23rem 30rem 0rem 30rem;
+  box-shadow: 2px 2px 5px ${palette.gray[4]};
+  &:hover{
+    background-color: ${palette.pink[1]};
+  }
+`
+
+const onHandleClick = () => {
+  window.location.href="/donate/address-input";
+}
+
+
+const PostViewer = ({ post, error, loading, isButton }) => {
   const {tag, view, title, nickname, createdDate, text, image} = post;
   const Date = createdDate ? createdDate.slice(0, 10) : '';
 
@@ -72,7 +94,6 @@ const PostViewer = ({ post, error, loading }) => {
             <b>{nickname}</b>
           </span>
           <span>{Date}</span>
-          <span>조회수 {view}</span>
         </SubInfo>
         <Tags>
           <div className="tag">#{tag}</div>
@@ -81,6 +102,7 @@ const PostViewer = ({ post, error, loading }) => {
       <PostContent
         dangerouslySetInnerHTML={{ __html: text }}
       />
+      {isButton && <DonateButton onClick={onHandleClick}>신청하기</DonateButton>}
     </PostViewerBlock>
   );
 };

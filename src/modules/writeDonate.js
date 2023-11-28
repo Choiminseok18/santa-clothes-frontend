@@ -11,7 +11,7 @@ const [
   WRITE_DONATE_POST,
   WRITE_DONATE_POST_SUCCESS,
   WRITE_DONATE_POST_FAILURE,
-] = createRequestActionTypes('/writeDonate/WRITE_POST'); // 포스트 작성
+] = createRequestActionTypes('writeDonate/WRITE_POST'); // 포스트 작성
 
 export const initialize = createAction(INITIALIZE);
 export const changeField = createAction(CHANGE_FIELD, ({ key, value }) => ({
@@ -37,7 +37,7 @@ const initialState = {
   image: '',
   text: '',
   tag: '',
-  userId: '1',
+  userId: JSON.parse(localStorage.getItem('member')) ? JSON.parse(localStorage.getItem('member')).id : '',
   post: null,
   postError: null,
 };

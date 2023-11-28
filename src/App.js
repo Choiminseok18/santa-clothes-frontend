@@ -1,36 +1,43 @@
 import { Route, Routes} from "react-router-dom";
-import MainPage from "./pages/Main/MainPage";
-import LoginPage from "./pages/Login/LoginPage";
-import SantaShop from "./pages/Santashop/SantaShopPage";
-import AddressForm from "./components/AddressInput";
-import Layout from './components/Layout/Layout';
-import WriteFindPage from "./pages/Find/WriteFindPage";
-import WriteDonatePage from "./pages/Donate/WriteDonatePage";
-import FindPostPage from './pages/Find/FindPostPage';
+import MainPage from "./pages/main/MainPage";
+import LoginPage from "./pages/auth/LoginPage";
+import Layout from './components/layout/Layout';
+import WriteFindPage from "./pages/find/WriteFindPage";
+import WriteDonatePage from "./pages/donate/WriteDonatePage";
+import FindPostViewerPage from './pages/find/FindPostViewerPage';
 import React from "react";
-import FindPage from "./pages/Find/FindPage";
-import DonatePage from "./pages/Donate/DonatePage";
-import DonatePostPage from "./pages/Donate/DonatePostPage";
-
+import FindPage from "./pages/find/FindPage";
+import DonatePage from "./pages/donate/DonatePage";
+import DonatePostViewerPage from "./pages/donate/DonatePostViewerPage";
+import SantaShopPage from "./pages/santashop/SantaShopPage";
+import SantaShopViewerPage from "./pages/santashop/SantaShopViewerPage";
+import {AuthContextProvider} from "./context/AuthContext";
+import Oauth2RedirectHandler from "./lib/oauth/Oauth2RedirectHandeler";
+import AddressInputPage from "./pages/donate/AddressInputPage";
 
 const App = () => {
   return (
-    <div>
+      <AuthContextProvider>
       <Layout>
         <Routes>
           <Route element={<MainPage />} path="/" exact={true} />
-          <Route element={<LoginPage />} path="/login-page" />
+          <Route element={<LoginPage />} path="/login" />
+          <Route element={<Oauth2RedirectHandler />} path="/oauth/callback/kakao"/>
+
+          <Route element={<SantaShopPage />} path="/santa-shop" />
+          <Route element={<SantaShopViewerPage />} path="/santa-shop/:Id" />
+
           <Route element={<FindPage />} path="/find" />
-          <Route element={<SantaShop />} path="/santa-shop" />
+          <Route element={<WriteFindPage />} path="/find/write" />
+          <Route element={<FindPostViewerPage />} path="/find/:findPostId" />
+
           <Route element={<DonatePage />} path="/donate" />
-          <Route element={<AddressForm />} path="/address-input" />
-          <Route element={<WriteDonatePage />} path="/donate-write" />
-          <Route element={<WriteFindPage />} path="/find-write" />
-          <Route element={<FindPostPage />} path="/find-viewer/:findPostId" />
-          <Route element={<DonatePostPage />} path="/donate-viewer/:donatePostId" />
+          <Route element={<WriteDonatePage />} path="/donate/write" />
+          <Route element={<DonatePostViewerPage />} path="/donate/:donatePostId" />
+          <Route element={<AddressInputPage />} path="/donate/address-input" />
         </Routes>
       </Layout>
-    </div>
+      </AuthContextProvider>
   );
 };
 

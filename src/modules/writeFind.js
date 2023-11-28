@@ -37,7 +37,7 @@ const initialState = {
   image: '',
   text: '',
   tag: '',
-  userId: '1',
+  userId: JSON.parse(localStorage.getItem('member')) ? JSON.parse(localStorage.getItem('member')).id : '',
   post: null,
   postError: null,
 };

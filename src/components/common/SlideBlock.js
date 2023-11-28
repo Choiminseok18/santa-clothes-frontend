@@ -18,8 +18,6 @@ export default function SlideBlock () {
               navigation
               autoplay={{ delay: 3000, disableOnInteraction: false }}
               pagination={{ clickable: true }}
-              onSwiper={(swiper) => console.log(swiper)}
-              onSlideChange={() => console.log('slide change')}
             >
               <SwiperSlide className={styles.slide1}>
                 <h1 className={styles.head}>나눔 게시판</h1>

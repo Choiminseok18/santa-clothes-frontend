@@ -1,7 +1,7 @@
-import DonateEditorContainer from '../containers/Donate/DonateEditorContainer';
+import DonateEditorContainer from '../containers/donate/DonateEditorContainer';
 import Responsive from '../components/common/Responsive';
-import DonateTagBoxContainer from "../containers/Donate/DonateTagBoxContainer";
-import DonateWriteActionButtonContainer from "../containers/Donate/DonateWriteActionButtonContainer";
+import DonateTagBoxContainer from "../containers/donate/DonateTagBoxContainer";
+import DonateWriteActionButtonContainer from "../containers/donate/DonateWriteActionButtonContainer";
 
 const WritePage = () => {
   return (

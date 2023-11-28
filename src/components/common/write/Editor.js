@@ -7,7 +7,7 @@ import Responsive from '../Responsive';
 
 const EditorBlock = styled(Responsive)`
 // 페이지 위아래 여백 지정
- padding-top: 5rem;
+ padding-top: 9rem;
   padding-bottom: 5rem;
 `;
 const TitleInput = styled.input`
@@ -24,7 +24,7 @@ const QuillWrapper = styled.div`
   //최소 크기 지정 및 padding 제거
    .ql-editor {
     padding: 0;
-    min-height: 320px;
+    min-height: 450px;
     font-size: 1.125rem;
     line-height: 1.5;
   }
@@ -42,8 +42,6 @@ const Editor = ({ title, text, onChangeField }) => {
       theme: 'bubble',
       placeholder: '내용을 작성하세요...',
       modules: {
-        // 더 많은 옵션
-        // https://quilljs.com/docs/modules/toolbar/ 참고
         toolbar: [
           [{ header: '1' }, { header: '2' }],
           ['bold', 'italic', 'underline', 'strike'],
@@ -53,8 +51,6 @@ const Editor = ({ title, text, onChangeField }) => {
       },
     });
 
-    // quill에 text-change 이벤트 핸들러 등록
-    // 참고: https://quilljs.com/docs/api/#events
     const quill = quillInstance.current;
     quill.on('text-change', (delta, oldDelta, source) => {
       if (source === 'user') {

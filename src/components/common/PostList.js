@@ -4,13 +4,13 @@ import palette from "../../lib/styles/palette";
 import {Link} from "react-router-dom";
 
 const PostListBlock = styled(Responsive)`
-  margin-top: 3rem;
-  margin-bottom: 3rem;
+  margin-top: 6rem;
+ 
 `;
 
 const PostItemBlock = styled.div`
-  padding-top: 2.5rem;
-  padding-bottom: 2.5rem;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
   /* 맨 위 포스트는 padding-top 없음 */
   position: relative;
   display: flex;
@@ -25,7 +25,7 @@ const PostItemBlock = styled.div`
   }
 
   h3 {
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     margin-bottom: 0;
     margin-top: 0;
 
@@ -57,12 +57,12 @@ const SubInfo = styled.div`
 `;
 
 
-const PostItem = ({ post }) => {
+const PostItem = ({ post, pageName }) => {
   const { title, createdDate, tag, user, id } = post;
   const Date = createdDate ? createdDate.slice(0, 10) : '';
   return (
     <PostItemBlock>
-      <Link style={{textDecoration: "none", color: "black"}} to={`/find-viewer/${id}`}><h3>{title}</h3></Link>
+      <Link style={{textDecoration: "none", color: "black"}} to={`/${pageName}/${id}`}><h3>{title}</h3></Link>
       <SubInfo>
         <span>{user}</span>
         <span>{Date}</span>
@@ -71,8 +71,7 @@ const PostItem = ({ post }) => {
     </PostItemBlock>
   );
 };
-
-const PostList = ({ posts, loading, postsError }) => {
+const PostList = ({ posts, loading, postsError, pageName }) => {
   // 에러 발생 시
   if (postsError) {
     return <PostListBlock>에러가 발생했습니다.</PostListBlock>;
@@ -82,8 +81,8 @@ const PostList = ({ posts, loading, postsError }) => {
       {/*  로딩 중이 아니고, 포스트 배열이 존재할 때만 보여 줌 */}
       {!loading && posts && (
         <div>
-          {posts.map(post => (
-            <PostItem post={post} />
+          {[...posts].map(post => (
+            <PostItem post={post} pageName={pageName}/>
           ))}
         </div>
       )}

@@ -6,9 +6,10 @@ client.interceptors.request.use(
   (config) => {
     const member = JSON.parse(localStorage.getItem('member'));
 
+
     if (member !== null) {
       config.headers['Content-Type'] = 'application/json';
-      config.headers['Authorization'] = `Bearer ${member.data.accessToken}`;
+      config.headers['Authorization'] = `Bearer ${member.accessToken}`;
     }
     return config;
   },
