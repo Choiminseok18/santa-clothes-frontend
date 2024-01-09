@@ -1,0 +1,5 @@
+{
+  "redirects": [
+    { "source": "/", "destination": "http://13.125.88.20:8080/", "permanent": true }
+  ]
+}
