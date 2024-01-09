@@ -61,11 +61,11 @@ const Profile = styled.img`
 `
 
 const onLoginClick = () => {
-  window.location.href = 'https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=cbf0432b0c063d0d602795e63e5881f2&redirect_uri=http://192.168.10.73:3000/oauth/callback/kakao';
+  window.location.href = 'https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=cbf0432b0c063d0d602795e63e5881f2&redirect_uri=http://172.17.116.96:3000/oauth/callback/kakao';
 }
 
 const onLogoutClick = () => {
-  window.location.href = 'https://kauth.kakao.com/oauth/logout?client_id=cbf0432b0c063d0d602795e63e5881f2&logout_redirect_uri=http://192.168.10.73:3000';
+  window.location.href = 'https://kauth.kakao.com/oauth/logout?client_id=cbf0432b0c063d0d602795e63e5881f2&logout_redirect_uri=http://172.17.116.96:3000';
   localStorage.removeItem('member');
 }
 

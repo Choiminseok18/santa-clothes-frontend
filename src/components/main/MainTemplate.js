@@ -5,6 +5,7 @@ import thirdImg from '../main/thirdImg.png';
 import palette from "../../lib/styles/palette";
 import {Link} from "react-router-dom";
 import SlideBlock from "../common/SlideBlock";
+import Todo from "../../Todo";
 
 const MainTemplateBlock = styled.div`
   position: relative;
